@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    include _includes/partials/head.pug
+
+  body
+    include _includes/partials/navigation.pug
+    include _includes/partials/preloader.pug
+    include _includes/partials/unsupported.pug
+
+    // Layouts
+    include _includes/layouts/home.pug
+    include _includes/layouts/about.pug
+    include _includes/layouts/collections.pug
+
+  script.
+    window.ASSETS = !{JSON.stringify(prismic.assets).replace(/<\//g, "<\\/")}
+
+  script(type="module", src="/src/app/index.js")
+
